@@ -21,6 +21,12 @@ PD: Espera a que sea programado para que pueda realizar otra cosa!\
 """)    
     
 
+@bot.message_handler(commands=['instagram'])
+def crearlinkig(message):
+    msj = input("Inserte un usuario de instagram y le daré su respectivo link: ")
+    
+    
+    
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 def echo_message(message):
     bot.reply_to(message, message.text)
