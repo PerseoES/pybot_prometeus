@@ -9,6 +9,29 @@ bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 
 
+
+markup = types.ReplyKeyboardMarkup(row_width=2)
+itembtn1 = types.KeyboardButton('a')
+itembtn2 = types.KeyboardButton('v')
+itembtn3 = types.KeyboardButton('d')
+markup.add(itembtn1, itembtn2, itembtn3)
+tb.send_message(chat_id, "Choose one letter:", reply_markup=markup)
+
+# or add KeyboardButton one row at a time:
+markup = types.ReplyKeyboardMarkup()
+itembtna = types.KeyboardButton('a')
+itembtnv = types.KeyboardButton('v')
+itembtnc = types.KeyboardButton('c')
+itembtnd = types.KeyboardButton('d')
+itembtne = types.KeyboardButton('e')
+markup.row(itembtna, itembtnv)
+markup.row(itembtnc, itembtnd, itembtne)
+tb.send_message(chat_id, "Choose one letter:", reply_markup=markup)
+
+
+
+
+
 @bot.message_handler(commands=['start'])
 def start(message):
     bot.reply_to(message, 'Hello, ' + message.from_user.first_name)
