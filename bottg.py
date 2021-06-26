@@ -13,11 +13,12 @@ server = Flask(__name__)
 def start(message):
     bot.reply_to(message, 'Hello, ' + message.from_user.first_name)
 
-    
+@bot.message_handler(commands=['saludar'])
 def send_welcome(message):
     bot.reply_to(message, """\
-Hi there, I am EchoBot.
-I am here to echo your kind words back to you. Just say anything nice and I'll say the exact same thing to you!\
+Hola, soy Lemillion Bot
+Estoy aquí para cumplir expectativas tuyas, sólo envíame un mensaje y te responderé lo mismo...
+Espera a que sea programado para que pueda realizar otra cosa!\
 """)    
     
 
