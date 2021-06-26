@@ -26,9 +26,9 @@ PD: Espera a que sea programado para que pueda realizar otra cosa!\
 
 @bot.message_handler(commands=['promedio'])
 def promedio(message):
-    bot.reply_to(message, """ 
-    Haré un promedio, tienes que darme los números y finalizar el mensaje con un 'ok'.
-     """)
+    bot.reply_to(message, """\
+Haré un promedio, sólo tenes que pasarme números y finalizar el mensaje con un 'listo'.\
+""")
 
 
 @bot.message_handler(commands=['instagram'])
