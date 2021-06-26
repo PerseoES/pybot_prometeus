@@ -16,9 +16,9 @@ def start(message):
 @bot.message_handler(commands=['saludar'])
 def send_welcome(message):
     bot.reply_to(message, """\
-Hola, soy Lemillion Bot
-Estoy aquí para cumplir expectativas tuyas, sólo envíame un mensaje y te responderé lo mismo...
-Espera a que sea programado para que pueda realizar otra cosa!\
+Hola, soy Lemillion Bot.
+Estoy aquí para realizar lo que me digas, sólo envíame un mensaje y te responderé lo mismo...
+PD: Espera a que sea programado para que pueda realizar otra cosa!\
 """)    
     
 
