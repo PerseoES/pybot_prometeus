@@ -10,7 +10,36 @@ server = Flask(__name__)
 
 @bot.message_handler(commands=['start'])
 def start(message):
-    bot.reply_to(message, 'Hello, ' + message.from_user.first_name)
+    bot.reply_to(message, 'Comencemos, ' + message.from_user.first_name)
+
+
+
+
+@bot.message_handler(commands=['saludar'])
+def send_welcome(message):
+    bot.reply_to(message, """\
+Hola, soy Lemillion Bot.
+Estoy aquí para realizar lo que me digas, sólo envíame un mensaje y te responderé lo mismo...
+PD: Espera a que sea programado para que pueda realizar otra cosa!\
+""")    
+
+
+@bot.message_handler(commands=['promedio'])
+def promedio(message):
+    bot.reply_to(message, """ 
+    Haré un promedio, tienes que darme los números y finalizar el mensaje con un 'ok'.
+     """)
+
+
+@bot.message_handler(commands=['instagram'])
+@bot.message_handler(func=lamba msg: msg.text is not None anda '@' in msg.text)
+def crearlinkig(message):
+    msj = message.text.split()
+    for texto in msj:
+        if '@' in msj:
+            var=msj
+    bot.reply_to(message, f'https://instagram.com/{var}')
+
 
 @bot.message_handler(commands=['saludar'])
 def send_welcome(message):
@@ -29,7 +58,7 @@ def crearlinkig(message):
     
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 def echo_message(message):
-    bot.reply_to(message, message.text)
+    bot.reply_to(message, f"Repito lo que dices: {message.text}")
 
 
 @server.route('/' + TOKEN, methods=['POST'])
