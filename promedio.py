@@ -12,5 +12,4 @@ def prom (mensaje):
         
         if mensaje=='0':
             return (sum(ls)/contador)
-            break
 
