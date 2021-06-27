@@ -5,7 +5,6 @@ import os
 from flask import Flask, request
 import respuestas as R
 import telebot
-import locale
 
 
 TOKEN = os.environ.get("BOT_TOKEN")
@@ -51,14 +50,13 @@ def crearlinkig(message):
 def send_welcome(message):
     bot.reply_to(message, """\
 Hola, soy Lemillion Bot.
-Estoy aquí para realizar lo que me digas, sólo envíame un mensaje y te responderé lo mismo...
+Estoy aquí para realizar lo que me digas, sólo envíame un mensaje y te responderé...
 PD: Espera a que sea programado para que pueda realizar otra cosa!\
 """)    
     
     
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 def echo_message(message):
-    locale.setlocale(locale.LC_ALL, 'es-ES') 
     texto = str(message.text).lower()
     resp = R.resp_simples(texto)
     bot.reply_to(message, resp)
