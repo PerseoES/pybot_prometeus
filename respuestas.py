@@ -20,10 +20,10 @@ def resp_simples(mensaje):
         date_time = ahora.strftime("%d/%m/%y, %H:%M:%S")
         return str(date_time)
     
-    if user_msg in ("quién es cande", "quién es candela", "quién es cande?", "quién es candela?")
+    if user_msg in ("quién es cande", "quién es candela", "quién es cande?", "quién es candela?"):
         return "Cande es una persona increíble, tendrías que conocerla si no lo has hecho aún. :D"
     
-    if user_msg in ("quién es juan", "quién es juani", "quién es juani?", "quién es juan?")
+    if user_msg in ("quién es juan", "quién es juani", "quién es juani?", "quién es juan?"):
         return "Juani es una personita increíble en este mundo, siempre te querrá ver feliz, espero tengas la oportunidad de cruzarte con él porque créeme que jamás te arrepentirás =)."
         
     else:
