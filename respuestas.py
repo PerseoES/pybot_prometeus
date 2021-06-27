@@ -1,6 +1,7 @@
  #!/usr/bin/python
  # -*- coding: utf-8 -*-
 from datetime import datetime
+import locale
 locale.setlocale(locale.LC_ALL, 'es-ES') 
 
 
