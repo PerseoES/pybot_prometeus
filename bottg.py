@@ -12,7 +12,7 @@ TOKEN = os.environ.get("BOT_TOKEN")
 bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
 
-@bot.message_handler(commands=['start'])
+@bot.message_handler(commands=['comenzar'])
 def start(message):
     bot.reply_to(message, 'Comencemos, ' + message.from_user.first_name)
 
@@ -31,18 +31,18 @@ PD: Espera a que sea programado para que pueda realizar otra acción!\
 """)    
 
 
-@bot.message_handler(func=lambda msg: msg.text is not None and '-p' in msg.text)
+@bot.message_handler(func=lambda msg: msg.text is not None and 'p' in msg.text)
 def promedio(message):
-    resultado = prom(message.text)
+    resultado = prom(message)
     bot.reply_to(message, resultado)
     
     
 @bot.message_handler(func=lambda msg: msg.text is not None and '@' in msg.text)
 def crearlinkig(message):
-    bot.send_message(message, 'Ingresa un usuario de IG y te devolveré su link a continuación (ej. @user).')
+    bot.send_message('Ingresa un usuario de IG y te devolveré su link a continuación (ej. @user).')
     msj=message.text.split()
     var = buscartxt(msj)
-    bot.reply_to(message, 'https://instagram.com/{}'.format(str(var)))
+    bot.reply_to(message, 'https://instagram.com/{}'.format(var))
 
 
 @bot.message_handler(commands=['saludar'])
@@ -51,7 +51,7 @@ def send_welcome(message):
 Hola, soy Lemillion Bot.
 Estoy aquí para realizar lo que me digas, sólo envíame un mensaje y te responderé...
 PD: Espera a que sea programado para que pueda realizar otra cosa!\
-""")    
+""")
 
 
     

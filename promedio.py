@@ -2,7 +2,7 @@ ls=[]
 texto=True
 contador=0
 
-def prom (mensaje: str):
+def prom (mensaje):
     global contador
     if mensaje!='0':
         for letra in mensaje:
@@ -11,5 +11,6 @@ def prom (mensaje: str):
                 contador+=1
         
         if mensaje=='0':
-            print(f"El promedio es: {sum(ls)/contador}")
+            return (sum(ls)/contador)
+            break
 

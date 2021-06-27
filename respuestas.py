@@ -57,7 +57,7 @@ def resp_simples(mensaje):
     
     if user_msg in ("time", "time?", "hora", "hora?", "qué hora es?", "dime la hora", "me puedes decir la hora?"):
         ahora = datetime.now(pytz.timezone('America/Argentina/Buenos_Aires'))
-        date_time = ahora.strftime("%A %d of %B del %Y  -  %H:%M")
+        date_time = ahora.strftime("%A %d of %B, %Y  -  %H:%M")
         return str(date_time)
     
     if user_msg in ("bien y tú?", "bien y vos?", "muy bien y tú?", "muy bien y vos?"):
@@ -73,7 +73,19 @@ def resp_simples(mensaje):
         return "Aprendiendo nuevas funciones, para realizar aún más cosas y poder responder de forma correcta a todo lo que me dices."
     
     if user_msg in ("dime un chiste", "cuéntame un chiste", "contame un chiste", "chiste", "dime una broma"):
-        return random(chistes)
+        return random.choice(chistes)
 
+
+    if user_msg in ("quieres jugar?", "vamos a jugar?", "jugamos?"):
+        return "Claro que sí, mi juego favorito es decodificar binario, pero a veces se me da bien el básquet... Jajaja!"
+    
+    if user_msg in ("cuántos años tienes?", "qué edad tienes?", "cuál es tu edad?", "dime tu edad", "cuántos años tenes?", "decime tu edad"):
+        return "Tengo algunos bits de edad, pero en tu idioma, tengo 13 años robóticos :)."
+    
+    if user_msg in("por qué te llamas lemillion?", "cuál es el significado de tu nombre?", "por qué te pusieron ese nombre?", "por qué te han puesto ese nombre?"):
+        return "Mi nombre proviene de 'Le-Million', el cual pertenece al personaje de un anime llamado <My Hero Academia>, Lemillion aspira a ser un héroe que pueda salvar a más de un millón de personas."
+   
+    if user_msg in("de dónde eres?", "where are you from?", "de dónde sos?", "de donde eres?", "de donde sos?", "de donde eres", "de donde sos"):
+        return "Fui programado en Buenos Aires - Argentina."
     else:
         return "No pude entender lo que me quisiste decir, por favor, dime otra palabra!"
