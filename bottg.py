@@ -33,10 +33,18 @@ def promedio(message):
 Haré un promedio, sólo tenes que pasarme números y finalizar el mensaje con un 'listo'.\
 """)
 
+    
+ def ingUser ():
+    var = input("Ingresar usuario: )
+    return var
+    
+    
+    
 @bot.message_handler(commands=['instagram'])
 def crearlinkig(message):
     bot.reply_to(message, 'Ingresa un usuario de IG y te devolveré su link a continuación (ej. @user):')
-    msj = message.text.split()
+    msj=ingUser():
+    msj.text.split():
     var = buscartxt(msj)
     bot.reply_to(message, 'https://instagram.com/{}'.format(var))
 
