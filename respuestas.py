@@ -4,6 +4,8 @@ from datetime import datetime
 import locale
 import pytz
 
+locale.setlocale(locale.LC_ALL, 'esp') 
+
 def resp_simples(mensaje):
     user_msg = str(mensaje).lower()
 
