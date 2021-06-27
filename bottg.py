@@ -31,7 +31,7 @@ Haré un promedio, sólo tenes que pasarme números y finalizar el mensaje con u
 """)
 
 
-@bot.message_handler(func=lamba msg: msg.text is not None anda '@' in msg.text)
+@bot.message_handler(func=lamba msg: msg.text is not None and '@' in msg.text)
 def crearlinkig(message):
     msj = message.text.split()
     for texto in msj:
