@@ -4,7 +4,11 @@ from datetime import datetime
 import locale
 import pytz
 
+<<<<<<< HEAD
 locale.setlocale(locale.LC_ALL, 'esp')
+=======
+locale.setlocale(local.LC_TIME, 'es_ES') 
+>>>>>>> 52f9bbb (RESP ACT)
 
 def resp_simples(mensaje):
     user_msg = str(mensaje).lower()
@@ -20,7 +24,7 @@ def resp_simples(mensaje):
     
     if user_msg in ("time", "time?", "hora", "hora?", "qué hora es?", "dime la hora", "me puedes decir la hora?"):
         ahora = datetime.now(pytz.timezone('America/Argentina/Buenos_Aires'))
-        date_time = ahora.strftime("%A %d de %B del %Y - %H:%M")
+        date_time = ahora.strftime("%A %d de %B del %Y  -  %H:%M")
 
         print("La hora y día es (Buenos Aires - Argentina): ")
 
