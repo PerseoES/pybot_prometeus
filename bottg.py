@@ -3,7 +3,7 @@
 import os
 
 from flask import Flask, request
-import respuestas as respuestas
+import respuestas as R
 import telebot
 
 TOKEN = os.environ.get("BOT_TOKEN")
@@ -56,7 +56,7 @@ PD: Espera a que sea programado para que pueda realizar otra cosa!\
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 def echo_message(message):
     texto = str(message.text).lower()
-    resp = respuesta.resp_simples(texto)
+    resp = R.resp_simples(texto)
     bot.reply_to(message, resp)
 
 @server.route('/' + TOKEN, methods=['POST'])
