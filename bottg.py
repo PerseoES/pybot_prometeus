@@ -34,8 +34,7 @@ Haré un promedio, sólo tenes que pasarme números y finalizar el mensaje con u
 """)
     
     
-    
-@bot.message_handler(commands=['instagram'])
+@bot.message_handler(func=lambda msg: msg.text is not None and '@' in msg.text)
 def crearlinkig(message):
     bot.reply_to(message, 'Ingresa un usuario de IG y te devolveré su link a continuación (ej. @user):')
     msj=message.text.split():
