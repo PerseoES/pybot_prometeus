@@ -4,11 +4,7 @@ from datetime import datetime
 import locale
 import pytz
 
-<<<<<<< HEAD
-locale.setlocale(locale.LC_ALL, 'esp')
-=======
-locale.setlocale(local.LC_TIME, 'es_ES') 
->>>>>>> 52f9bbb (RESP ACT)
+locale.setlocale(locale.LC_ALL, 'es-ES') 
 
 def resp_simples(mensaje):
     user_msg = str(mensaje).lower()

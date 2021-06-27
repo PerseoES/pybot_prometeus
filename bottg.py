@@ -8,7 +8,7 @@ import telebot
 import locale
 import pytz
 
-locale.setlocale(local.LC_TIME, 'es_ES') 
+locale.setlocale(locale.LC_ALL, 'es-ES') 
 
 TOKEN = os.environ.get("BOT_TOKEN")
 bot = telebot.TeleBot(TOKEN)
