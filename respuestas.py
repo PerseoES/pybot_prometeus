@@ -28,8 +28,7 @@ def resp_simples(mensaje):
     if user_msg in ("quién es juan", "quién es juani", "quién es juani?", "quién es juan?"):
         return "Juani es una personita increíble en este mundo, siempre te querrá ver feliz, espero tengas la oportunidad de cruzarte con él porque créeme que jamás te arrepentirás =)."
     
-    if user_msg in ("dime un chiste", "cuéntame un chiste", "contame un chiste", "chiste", "dime una broma")
-
+    if user_msg in ("dime un chiste", "cuéntame un chiste", "contame un chiste", "chiste", "dime una broma"):
         return """En una entrevista de trabajo:
 
             - ¿Nivel de inglés?
