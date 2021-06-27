@@ -1,7 +1,7 @@
  #!/usr/bin/python
  # -*- coding: utf-8 -*-
 from datetime import datetime
-locale.setlocale(locale.LC_ALL, 'es_ar') 
+locale.setlocale(locale.LC_ALL, 'es-ES') 
 
 
 def resp_simples(mensaje):
@@ -17,8 +17,9 @@ def resp_simples(mensaje):
         return "Soy Lemillion Bot, programado por mi dueño @Sebastian_PS. Es un gusto hablar contigo, espero pueda sacarte una sonrisa :)."
     
     if user_msg in ("time", "time?", "hora", "hora?", "qué hora es?", "dime la hora", "me puedes decir la hora?"):
-        ahora = datetime.now()
+        ahora = datetime.now(pytz.timezone('America/Argentina/Buenos_Aires'))
         date_time = ahora.strftime("%A %d de %B del %Y - %H:%M")
+        print("La hora y día es (Buenos Aires - Argentina): ")
         return str(date_time)
     
     if user_msg in ("quién es cande", "quién es candela", "quién es cande?", "quién es candela?"):
@@ -26,6 +27,24 @@ def resp_simples(mensaje):
     
     if user_msg in ("quién es juan", "quién es juani", "quién es juani?", "quién es juan?"):
         return "Juani es una personita increíble en este mundo, siempre te querrá ver feliz, espero tengas la oportunidad de cruzarte con él porque créeme que jamás te arrepentirás =)."
-        
+    
+    if user_msg in ("dime un chiste", "cuéntame un chiste", "contame un chiste", "chiste", "dime una broma")
+
+        return """En una entrevista de trabajo:
+
+            - ¿Nivel de inglés?
+
+            - Alto
+
+            - Bien. Traduzca "mirar".
+
+            - Look.
+
+            - Perfecto. Úselo en una frase.
+
+            - "Luke", yo soy tu padre.
+
+            - Contratado."""
+
     else:
         return "No pude entender lo que me quisiste decir, por favor, dime otra palabra."
