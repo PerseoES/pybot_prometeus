@@ -18,7 +18,7 @@ def resp_simples(mensaje):
     if user_msg in ("time", "time?", "hora", "hora?", "qué hora es?", "dime la hora", "me puedes decir la hora?"):
         ahora = datetime.now()
         date_time = ahora.strftime("%d/%m/%y, %H:%M:%S")
-        return (f"{La hora es: str(date_time)}")
+        return str(date_time)
     
     if user_msg in ("quién es cande", "quién es candela", "quién es cande?", "quién es candela?")
         return "Cande es una persona increíble, tendrías que conocerla si no lo has hecho aún. :D"

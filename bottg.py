@@ -3,7 +3,7 @@
 import os
 
 from flask import Flask, request
-import respuestas as R
+import respuestas as respuestas
 import telebot
 
 TOKEN = os.environ.get("BOT_TOKEN")
@@ -41,7 +41,7 @@ def crearlinkig(message):
     bot.reply_to(message, 'Ingresa un usuario de IG y te devolveré su link a continuación (ej. @user):')
     msj=message.text.split()
     var = buscartxt(msj)
-    bot.reply_to(message, 'https://instagram.com/{}'.format(str(var)))
+    bot.reply_to(message, 'https://instagram.com/{}'.format(var))
 
 
 @bot.message_handler(commands=['saludar'])
@@ -56,7 +56,7 @@ PD: Espera a que sea programado para que pueda realizar otra cosa!\
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 def echo_message(message):
     texto = str(message.text).lower()
-    resp = R.resp_simples(texto)
+    resp = respuesta.resp_simples(texto)
     bot.reply_to(message, resp)
 
 @server.route('/' + TOKEN, methods=['POST'])
