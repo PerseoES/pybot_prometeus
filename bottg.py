@@ -32,13 +32,6 @@ def promedio(message):
     bot.reply_to(message, """\
 Haré un promedio, sólo tenes que pasarme números y finalizar el mensaje con un 'listo'.\
 """)
-
-    
-    
-@bot.message_handler(func=lambda msg: msg.text is not None and '@' is in msg.text)
-def ingUser (message):
-    var = message
-    return var
     
     
     
