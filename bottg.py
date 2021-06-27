@@ -5,10 +5,6 @@ import os
 from flask import Flask, request
 import respuestas as R
 import telebot
-<<<<<<< HEAD
-
-=======
->>>>>>> d208977 (New version)
 
 TOKEN = os.environ.get("BOT_TOKEN")
 bot = telebot.TeleBot(TOKEN)
