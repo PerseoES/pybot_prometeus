@@ -16,10 +16,9 @@ def resp_simples(mensaje):
         return "Soy Lemillion Bot, programado por mi dueño @Sebastian_PS. Es un gusto hablar contigo, espero pueda sacarte una sonrisa :)."
     
     if user_msg in ("time", "time?", "hora", "hora?", "qué hora es?", "dime la hora", "me puedes decir la hora?"):
-        
         ahora = datetime.now()
         date_time = now.strftime("%d/%m/%y, %H:%M:%S")
-
         return (f"La hora es {str(date_time)}")
+        
     else:
         return "No pude entender lo que me quisiste decir, por favor, reingresa otra palabra."
