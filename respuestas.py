@@ -1,6 +1,7 @@
  #!/usr/bin/python
  # -*- coding: utf-8 -*-
 from datetime import datetime
+locale.setlocale(locale.LC_ALL, 'es_ar') 
 
 
 def resp_simples(mensaje):
@@ -17,7 +18,7 @@ def resp_simples(mensaje):
     
     if user_msg in ("time", "time?", "hora", "hora?", "qué hora es?", "dime la hora", "me puedes decir la hora?"):
         ahora = datetime.now()
-        date_time = ahora.strftime("%d/%m/%y, %H:%M:%S")
+        date_time = ahora.strftime("%A %d de %B del %Y - %H:%M")
         return str(date_time)
     
     if user_msg in ("quién es cande", "quién es candela", "quién es cande?", "quién es candela?"):
