@@ -4,7 +4,6 @@ from datetime import datetime
 import pytz
 
 
-
 def resp_simples(mensaje):
     user_msg = str(mensaje).lower()
 
