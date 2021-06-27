@@ -12,7 +12,10 @@ server = Flask(__name__)
 def start(message):
     bot.reply_to(message, 'Comencemos, ' + message.from_user.first_name)
 
-
+def buscartxt(msg):
+    for letra in msg:
+        if '@' in letra:
+            return msg
 
 
 @bot.message_handler(commands=['saludar'])
@@ -34,9 +37,8 @@ Haré un promedio, sólo tenes que pasarme números y finalizar el mensaje con u
 def crearlinkig(message):
     bot.reply_to(message, 'Ingresa un usuario de IG y te devolveré su link a continuación:')
     msj = message.text.split()
-    for texto in msj:
-        if '@' in msj:
-            var=msj
+    var = buscartxt(msj)
+    
     bot.reply_to(message, f'https://instagram.com/{var}')
 
 
