@@ -35,11 +35,11 @@ Haré un promedio, sólo tenes que pasarme números y finalizar el mensaje con u
 
 @bot.message_handler(commands=['instagram'])
 def crearlinkig(message):
-    bot.reply_to(message, 'Ingresa un usuario de IG y te devolveré su link a continuación:')
+    bot.reply_to(message, 'Ingresa un usuario de IG y te devolveré su link a continuación (ej. /instagram @usuario):')
     msj = message.text.split()
     var = buscartxt(msj)
     
-    bot.reply_to(message, f'https://instagram.com/{var}')
+    bot.reply_to(message, f'https://instagram.com/{var[1]}')
 
 
 @bot.message_handler(commands=['saludar'])
