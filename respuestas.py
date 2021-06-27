@@ -2,6 +2,7 @@
  # -*- coding: utf-8 -*-
 from datetime import datetime
 import locale
+import pytz
 
 def resp_simples(mensaje):
     user_msg = str(mensaje).lower()
@@ -16,7 +17,7 @@ def resp_simples(mensaje):
         return "Soy Lemillion Bot, programado por mi dueño @Sebastian_PS. Es un gusto hablar contigo, espero pueda sacarte una sonrisa :)."
     
     if user_msg in ("time", "time?", "hora", "hora?", "qué hora es?", "dime la hora", "me puedes decir la hora?"):
-        ahora = datetime.now(pytz.timezone('Argentina/Buenos_Aires'))
+        ahora = datetime.now(pytz.timezone('America/Argentina/Buenos_Aires'))
         date_time = ahora.strftime("%A %d de %B del %Y - %H:%M")
 
         print("La hora y día es (Buenos Aires - Argentina): ")
