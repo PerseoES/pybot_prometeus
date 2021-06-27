@@ -5,7 +5,10 @@ import os
 from flask import Flask, request
 import respuestas as R
 import telebot
+<<<<<<< HEAD
 
+=======
+>>>>>>> d208977 (New version)
 
 TOKEN = os.environ.get("BOT_TOKEN")
 bot = telebot.TeleBot(TOKEN)
@@ -41,8 +44,9 @@ Haré un promedio, sólo tenes que pasarme números y finalizar el mensaje con u
 def crearlinkig(message):
     bot.sendMessage(message, 'Ingresa un usuario de IG y te devolveré su link a continuación (ej. @user):')
     msj=message.text.split()
-    msj.replace("[]", "")
     var = buscartxt(msj)
+    var.replace("[", "")
+    var.replace("]", "")
     bot.reply_to(message, 'https://instagram.com/{}'.format(var))
 
 

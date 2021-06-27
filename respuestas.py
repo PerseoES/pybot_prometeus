@@ -19,10 +19,8 @@ def resp_simples(mensaje):
     
     if user_msg in ("time", "time?", "hora", "hora?", "qué hora es?", "dime la hora", "me puedes decir la hora?"):
         ahora = datetime.now(pytz.timezone('America/Argentina/Buenos_Aires'))
-        date_time = ahora.strftime("%A %d de %B del %Y  -  %H:%M")
-
+        date_time = ahora.strftime("%A %d of %B del %Y  -  %H:%M")
         print("La hora y día es (Buenos Aires - Argentina): ")
-
         return str(date_time)
     
     if user_msg in ("quién es cande", "quién es candela", "quién es cande?", "quién es candela?"):
