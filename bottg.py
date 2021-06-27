@@ -5,6 +5,10 @@ import os
 from flask import Flask, request
 import respuestas as R
 import telebot
+<<<<<<< HEAD
+=======
+
+>>>>>>> 421eba6 (New version)
 
 TOKEN = os.environ.get("BOT_TOKEN")
 bot = telebot.TeleBot(TOKEN)
@@ -24,8 +28,8 @@ def buscartxt(msg):
 def send_welcome(message):
     bot.reply_to(message, """\
 Hola, soy Lemillion Bot.
-Estoy aquí para realizar lo que me digas, sólo envíame un mensaje y te responderé lo mismo...
-PD: Espera a que sea programado para que pueda realizar otra cosa!\
+Estoy aquí para realizar lo que me digas, sólo envíame un mensaje y te responderé...
+PD: Espera a que sea programado para que pueda realizar otra acción!\
 """)    
 
 
@@ -38,12 +42,10 @@ Haré un promedio, sólo tenes que pasarme números y finalizar el mensaje con u
     
 @bot.message_handler(func=lambda msg: msg.text is not None and '@' in msg.text)
 def crearlinkig(message):
-    bot.sendMessage(message, 'Ingresa un usuario de IG y te devolveré su link a continuación (ej. @user):')
+    bot.sendMessage(message, 'Ingresa un usuario de IG y te devolveré su link a continuación (ej. @user).')
     msj=message.text.split()
     var = buscartxt(msj)
-    var.replace("[", "")
-    var.replace("]", "")
-    bot.reply_to(message, 'https://instagram.com/{}'.format(var))
+    bot.reply_to(message, 'https://instagram.com/{}'.format(str(var))
 
 
 @bot.message_handler(commands=['saludar'])
