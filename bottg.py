@@ -38,8 +38,8 @@ def crearlinkig(message):
     bot.reply_to(message, 'Ingresa un usuario de IG y te devolveré su link a continuación (ej. /instagram @usuario):')
     msj = message.text.split()
     var = buscartxt(msj)
-    
-    bot.reply_to(message, f'https://instagram.com/{var[1]}')
+    var.pop()
+    bot.reply_to(message, f'https://instagram.com/{var}')
 
 
 @bot.message_handler(commands=['saludar'])
