@@ -1,11 +1,8 @@
  #!/usr/bin/python
  # -*- coding: utf-8 -*-
 from datetime import datetime
-<<<<<<< HEAD
 import locale
-=======
-import
->>>>>>> a39c4c6 (Act respuestas)
+
 locale.setlocale(locale.LC_ALL, 'es-ES') 
 
 
