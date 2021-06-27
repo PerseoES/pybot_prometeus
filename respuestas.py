@@ -4,7 +4,7 @@ from datetime import datetime
 import locale
 import pytz
 
-locale.setlocale(locale.LC_ALL, 'es-ES') 
+
 
 def resp_simples(mensaje):
     user_msg = str(mensaje).lower()
@@ -19,6 +19,7 @@ def resp_simples(mensaje):
         return "Soy Lemillion Bot, programado por mi dueño @Sebastian_PS. Es un gusto hablar contigo, espero pueda sacarte una sonrisa :)."
     
     if user_msg in ("time", "time?", "hora", "hora?", "qué hora es?", "dime la hora", "me puedes decir la hora?"):
+        locale.setlocale(locale.LC_ALL, 'es-ES')
         ahora = datetime.now(pytz.timezone('America/Argentina/Buenos_Aires'))
         date_time = ahora.strftime("%A %d de %B del %Y  -  %H:%M")
 
