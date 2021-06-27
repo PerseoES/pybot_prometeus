@@ -1,6 +1,3 @@
-from math import sum
-
-
 ls=[]
 texto=True
 contador=0
