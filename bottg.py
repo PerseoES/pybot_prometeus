@@ -5,6 +5,7 @@ import os
 from flask import Flask, request
 import respuestas as R
 import telebot
+from promedio import prom
 
 
 TOKEN = os.environ.get("BOT_TOKEN")
@@ -30,16 +31,15 @@ PD: Espera a que sea programado para que pueda realizar otra acción!\
 """)    
 
 
-@bot.message_handler(commands=['promedio'])
+@bot.message_handler(func=lambda msg: msg.text is not None and '-p' in msg.text)
 def promedio(message):
-    bot.reply_to(message, """\
-Haré un promedio, sólo tenes que pasarme números y finalizar el mensaje con un 'listo'.\
-""")
+    resultado = prom(message.text)
+    bot.reply_to(message, resultado)
     
     
 @bot.message_handler(func=lambda msg: msg.text is not None and '@' in msg.text)
 def crearlinkig(message):
-    bot.sendMessage(message, 'Ingresa un usuario de IG y te devolveré su link a continuación (ej. @user).')
+    bot.send_message(message, 'Ingresa un usuario de IG y te devolveré su link a continuación (ej. @user).')
     msj=message.text.split()
     var = buscartxt(msj)
     bot.reply_to(message, 'https://instagram.com/{}'.format(str(var)))
@@ -52,7 +52,8 @@ Hola, soy Lemillion Bot.
 Estoy aquí para realizar lo que me digas, sólo envíame un mensaje y te responderé...
 PD: Espera a que sea programado para que pueda realizar otra cosa!\
 """)    
-    
+
+
     
 @bot.message_handler(func=lambda message: True, content_types=['text'])
 def echo_message(message):

@@ -2,6 +2,45 @@
  # -*- coding: utf-8 -*-
 from datetime import datetime
 import pytz
+import random
+
+chistes=["""En una entrevista de trabajo:
+
+- ¿Nivel de inglés?
+
+- Alto
+
+- Bien. Traduzca "mirar".
+
+- Look.
+
+- Perfecto. Úselo en una frase.
+
+- "Luke", yo soy tu padre.
+
+- Contratado.""",
+ """ — ¡Estás obsesionado con la comida!
+
+— No sé a que te refieres croquetamente.""",
+"""— ¿Por qué estás hablando con esas zapatillas?
+
+— Porque pone 'converse'""",
+"""— ¡Camarero! Este filete tiene muchos nervios.
+
+— Normal, es la primera vez que se lo comen.""",
+"""— Hola, ¿está Agustín?
+
+— No, estoy incomodín.""",
+"""— Abuelo, ¿por qué estás delante del ordenador con los ojos cerrados?
+
+— Es que Windows me ha dicho que cierre las pestañas.""",
+"""— Hola ¿Conchita?
+
+— No, con Tarzán.""",
+"""— Hola, ¿tienen libros para el cansancio?
+
+— Sí, pero están agotados."""
+]
 
 
 def resp_simples(mensaje):
@@ -29,23 +68,12 @@ def resp_simples(mensaje):
     
     if user_msg in ("quién es juan", "quién es juani", "quién es juani?", "quién es juan?"):
         return "Juani es una personita increíble en este mundo, siempre te querrá ver feliz, espero tengas la oportunidad de cruzarte con él porque créeme que jamás te arrepentirás =)."
+
+    if user_msg in ("qué haces?", "qué estás haciendo?", "what are you doing?", "qué haces?", "que haces?", "que estas haciendo?"):
+        return "Aprendiendo nuevas funciones, para realizar aún más cosas y poder responder de forma correcta a todo lo que me dices."
     
     if user_msg in ("dime un chiste", "cuéntame un chiste", "contame un chiste", "chiste", "dime una broma"):
-        return """En una entrevista de trabajo:
-
-- ¿Nivel de inglés?
-
-- Alto
-
-- Bien. Traduzca "mirar".
-
-- Look.
-
-- Perfecto. Úselo en una frase.
-
-- "Luke", yo soy tu padre.
-
-- Contratado."""
+        return random(chistes)
 
     else:
-        return "No pude entender lo que me quisiste decir, por favor, dime otra palabra."
+        return "No pude entender lo que me quisiste decir, por favor, dime otra palabra!"
