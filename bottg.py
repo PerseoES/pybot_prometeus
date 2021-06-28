@@ -32,7 +32,6 @@ def buscartxt(msg):
         if '@' in letra:
             return msg
 
-
 @bot.message_handler(commands=['saludar'])
 def send_welcome(message):
     bot.reply_to(message, """\
