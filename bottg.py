@@ -5,12 +5,23 @@ import os
 from flask import Flask, request
 import respuestas as R
 import telebot
-from promedio import prom
+from telebot import types
+import time
 
 
 TOKEN = os.environ.get("BOT_TOKEN")
 bot = telebot.TeleBot(TOKEN)
 server = Flask(__name__)
+
+markup = types.InlineKeyboardMarkup()
+item1=types.InlineKeyboardButton("Mi Linkedin", url="https://linkedin.com/in/emiliano-pintos")
+item2=types.InlineKeyboardButton("Mi Instagram", url="https://instagram.com/sebasti4n.ps")
+markup.add(item1, item2)
+
+
+@bot.message_handler(commands=['contacto'])
+def contacto(message):
+    bot.send_message(message.chat.id, "Contactame por aquí:", reply_markup=markup)
 
 @bot.message_handler(commands=['comenzar'])
 def start(message):
@@ -42,7 +53,7 @@ def crearlinkig(message):
     bot.reply_to(message, 'Ingresa un usuario de IG y te devolveré su link a continuación (ej. @user).')
     msj=message.text.split()
     var = buscartxt(msj)
-    bot.reply_to(message, 'https://instagram.com/{}'.format(map(var))
+    bot.reply_to(message, 'https://instagram.com/{}'.format(map(var)))
 
 
 @bot.message_handler(commands=['saludar'])
